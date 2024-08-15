@@ -1,6 +1,6 @@
 body{
   background-color: #FAF3E0;
-
+  display: flex; 
 }
 .App {
   text-align: center;
@@ -9,6 +9,7 @@ body{
 .content{
   display: flex;
   flex-direction: row;
+  
 }
 .Header {
   background-color: #388E3C;

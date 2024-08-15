@@ -6,17 +6,22 @@ export default function CartItem({ items ,removeHandler }) {
 
         const showItems =items.map((item, id) => (
             <div key={id} className ={style.item} >                  
-                <img src={item.image} alt={item.name} className={style.itemImg} />
+                <img src={item.image} alt={item.name} className={style.itemImg} />     
+                <div className={style.lable}>
                 <h3>{item.name}</h3>
-                <h5>{item.price}$</h5>
-                <button  className={style.removeBtn} onClick={()=>removeHandler(id)} >Remove</button>
+                <h4>{item.price}$</h4>
+                </div>
+                <button  className={style.removeBtn} onClick={()=>removeHandler(id)} >X</button>
             </div>
         ))
 
 
-    return (
+    return ( 
+        <div>
         <div>
             {showItems}
+        </div>
+        <button className={style.ConfirmBtn}>Confirm Order</button>
         </div>
     );
 }

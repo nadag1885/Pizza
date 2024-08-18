@@ -1,16 +1,18 @@
 body{
   background-color: #FAF3E0;
-  display: flex; 
+  margin: 0;
+  padding: 0;
 }
+
 .App {
   text-align: center;
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding: 20px;
 }
-.content{
-  display: flex;
-  flex-direction: row;
-  
-}
+
 .Header {
   background-color: #388E3C;
   padding: 20px;
@@ -18,5 +20,29 @@ body{
   font-size: 50px;
   font-weight: bold;
   text-align: left;
-  
+  grid-column: 1 / -1; /* Make the header span all columns */
+}
+
+.itemsContainer {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.cartContainer {
+  grid-column: 3 / 4;
+}
+
+@media (max-width: 800px) {
+  .App {
+    grid-template-columns: 1fr;
+  }
+
+  .itemsContainer {
+    grid-column: 1 / -1; /* Take the entire width on smaller screens */
+  }
+
+  .cartContainer {
+    grid-column: 1 / -1; /* Move cart to the bottom */
+  }
 }

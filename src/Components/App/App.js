@@ -3,9 +3,17 @@ import Item from '../Item/item';
 import Data from '../assets/data.json';
 import Cart from '../Cart/Cart';
 import { useState } from'react';
+import Modal from '../modal/Modal';
 
 function App() {
   const [cart, setCart] = useState([]); 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => setShowModal(true);
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setCart([]);
+  }
 
   const addToCart = (item) => {
       const newCart = [...cart , item]
@@ -20,13 +28,18 @@ function App() {
     console.log(updatedCart);   
 
   }
+  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+
+
   return (
     <div className="App">    
     <div className="Header" >PIZZA..!</div>
-    <div className='content'>
-      <Item Data={Data} addToCart={addToCart}/>
-      <Cart cart={cart} removeHandler={removeFromCart}/>
-      </div>
+    <div className="itemsContainer">
+      <Item Data={Data} addToCart={addToCart}/></div>
+      <Cart cart={cart} removeHandler={removeFromCart} showModal={showModal} 
+        setShowModal={setShowModal} handleOpenModal={handleOpenModal}  totalPrice={totalPrice} />           
+        {showModal &&
+      <Modal show={showModal} onClose={handleCloseModal}></Modal>}
     </div>
   );
 }

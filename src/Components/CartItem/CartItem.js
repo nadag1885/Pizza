@@ -21,7 +21,6 @@ export default function CartItem({ items ,removeHandler }) {
         <div>
             {showItems}
         </div>
-        <button className={style.ConfirmBtn}>Confirm Order</button>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 .item{
     padding: 10px; 
     margin: 10px;
-    display: flex; 
+    display: grid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@
 }
 .items{
     display: grid;
-    grid-template-columns: repeat(3,1fr);     
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
 }
 .addBtn{
@@ -22,11 +22,11 @@
     font-weight: bold;
     font-size: 18px;
     margin-top: -20px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
 }
 
 .img{

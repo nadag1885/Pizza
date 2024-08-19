@@ -12,7 +12,7 @@
 }
 .Overlay{
     z-index: 1500;
-    position: absolute;
+    position: fixed !important;
     background-color: #fff;
     padding: 50px;
     border-radius: 10px;

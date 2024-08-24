@@ -1,7 +1,7 @@
 .item{    
     width: 100%;
     margin-top: 30px;
-    padding: 20px; 
+    padding:0px 15px; 
     background-color: #FAF3E0;                       
     display: flex;             
     flex-direction: row;
@@ -45,4 +45,23 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     cursor: pointer;
+}
+.btn{
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;  
+    border: none;  
+    font-weight: bold ;    
+    font-size: 20px;
+    margin: 10px;
+    background-color: #388E3C;
+    color: white;
+    width:  50px;
+
+}
+.count{
+    font-size: 20px;
+    font-weight: bold;
 }
